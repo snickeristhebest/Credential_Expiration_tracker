@@ -4,14 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Table Example</title>
+    <title>Admin View</title>
     <link rel="stylesheet" href="read_csv.css">
 </head>
 
 <body>
 
+    <div id="buttons-container">
+        <button class="button" onclick="handleButtonClick('MOCK_DATA.csv')">Button 2</button>
+        <button class="button" onclick="handleButtonClick('Employee_info.csv')">Button 1</button>
+    </div>
+
+    <div id="admin-heading">Admin View</div>
+
+    <div id="table-container"></div>
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="read_csv.js"></script>
+    <script>
+        function handleButtonClick(csvFileName) {
+            // alert('Button Clicked: ' + csvFileName);
+            
+            // Update the CSV file URL based on the button clicked
+            var csvUrl = csvFileName;
+
+            // Fetch the data from the updated CSV file URL
+            $.ajax({
+                url: csvUrl,
+                dataType: 'text',
+            }).done(successFunction);
+        }
+    </script>
 
 </body>
 
