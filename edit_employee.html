@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="\css\read_csv.css">
+</head>
+
+<body>
+
+    <div id="admin-heading">Edit Employee</div>
+    <div id="table-container">
+        <form id="employeeForm">
+            <table>
+                <tr>
+                    <td><label for="employeeName">Employee Name</label></td>
+                    <td><label for="employeeTitle">Employee Title/Type</label></td>
+                    <td><label for="employeeEmail">Email</label></td>
+                    <td><label for="StateLicense">State License</label></td>
+                    <td><label for="additionalCertNo">Add'tl Cert No.</label></td>
+                    <td><label for="hiredDate">Hired Date</label></td>
+                    <td><label for="renewalTerm">Renewal Term (YR)</label></td>
+                    <td><label for="currentLicense">Current State License</label></td>
+                    <td><label for="cccOtrCertification">CCC/OTR Certification</label></td>
+                    <td><label for="driverLicense">Driver's License</label></td>
+                    <td><label for="tbTest">TB Test</label></td>
+                    <td><label for="cprFirstAid">CPR/First Aid</label></td>
+                    <td><label for="autoLiability">Auto Liability</label></td>
+                    <td><label for="performanceReview">Performance Review</label></td>
+                    <td><label for="competencyAssessment">Competency Assessment</label></td>
+                    <td><label for="inHouseTraining">In House Training</label></td>
+                    <td><label for="billingAgreement">Billing Agreement</label></td>
+                    <td><label for="aneExam">ANE EXAM</label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="employeeName" name="employeeName" required></td>
+                    <td><input type="text" id="employeeTitle" name="employeeTitle" required></td>
+                    <td><input type="email" id="employeeEmail" name="employeeEmail" required></td>
+                    <td><input type="text" id="StateLicense" name="StateLicense" required></td>
+                    <td><input type="text" id="additionalCertNo" name="additionalCertNo" required></td>
+                    <td><input type="date" id="hiredDate" name="hiredDate" required></td>
+                    <td><input type="date" id="renewalTerm" name="renewalTerm" required></td>
+                    <td><input type="date" id="currentLicense" name="currentLicense" required></td>
+                    <td><input type="date" id="cccOtrCertification" name="cccOtrCertification" required></td>
+                    <td><input type="date" id="driverLicense" name="driverLicense" required></td>
+                    <td><input type="date" id="tbTest" name="tbTest" required></td>
+                    <td><input type="date" id="cprFirstAid" name="cprFirstAid" required></td>
+                    <td><input type="date" id="autoLiability" name="autoLiability" required></td>
+                    <td><input type="date" id="performanceReview" name="performanceReview" required></td>
+                    <td><input type="date" id="competencyAssessment" name="competencyAssessment" required></td>
+                    <td><input type="date" id="inHouseTraining" name="inHouseTraining" required></td>
+                    <td><input type="date" id="billingAgreement" name="billingAgreement" required></td>
+                    <td><input type="date" id="aneExam" name="aneExam" required></td>
+                </tr>
+                <!-- Add more rows for additional fields -->
+        
+                <tr>
+                    <td colspan="2"><button type="button" onclick="addEmployee()">Add Employee</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="employeeList">
+        <!-- Your existing employee table or list goes here -->
+        <!-- This will be dynamically updated when a new employee is added -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="your-script.js"></script>
+</body>
+
+</html>
