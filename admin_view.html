@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin View</title>
-    <link rel="stylesheet" href="css\read_csv.css">
+    <link rel="stylesheet" href="css\style.css">
 </head>
 
 <body>
@@ -20,20 +20,9 @@
     <div id="table-container"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="javascript\read_csv.js"></script>
-    <script>
-        function handleButtonClick(csvFileName) {
-            // alert('Button Clicked: ' + csvFileName);
-            
-            // Update the CSV file URL based on the button clicked
-            var csvUrl = csvFileName;
-
-            // Fetch the data from the updated CSV file URL
-            $.ajax({
-                url: csvUrl,
-                dataType: 'text',
-            }).done(successFunction);
-        }
+    <script src="javascript\csvToHtmlTable.js"></script>
+    <script src="javascript/handleButtonClick.js">
+        
     </script>
 
 </body>
