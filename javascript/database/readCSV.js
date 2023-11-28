@@ -5,7 +5,7 @@ function logCsvOnConsole(csvURL) {
     parseCsvData(csvURL)
         .then(rows => {
             for(var i=0;i<rows.length;i++){
-                console.log(rows[i][4]);
+                console.log(rows[i]);
             }
             
             console.log("finished");
@@ -31,5 +31,5 @@ function parseCsvData(csvURL) {
             });
     });
 }
-
+logCsvOnConsole("./Data/MOCK_DATA.csv")
 
