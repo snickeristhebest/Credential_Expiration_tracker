@@ -47,7 +47,7 @@ function displayTable(tableHTML) {
 }
 
 // Main function
-function displayCsvAsTable(data) {
+function displayAsTable(data) {
     var tableHTML = generateHTMLTable(data);
     displayTable(tableHTML);
 }

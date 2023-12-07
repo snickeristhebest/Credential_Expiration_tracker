@@ -1,35 +1,56 @@
 const fs = require('fs');
 const { parse } = require('csv-parse');
 
-function logCsvOnConsole(csvURL) {
-    parseCsvData(csvURL)
-        .then(rows => {
-            for(var i=0;i<rows.length;i++){
-                console.log(rows[i]);
-            }
-            
-            console.log("finished");
-        })
-        .catch(error => {
-            console.log(error.message);
-        });
-}
+class CsvReader {
+    constructor(csvURL) {
+        this.csvURL = csvURL;
+    }
 
-function parseCsvData(csvURL) {
-    return new Promise((resolve, reject) => {
-        const rows = [];
-        fs.createReadStream(csvURL)
-            .pipe(parse({ delimiter: ",", from_line: 2 }))
-            .on("data", function (row) {
-                rows.push(row);
+    consoleLog() {
+        this.parseData()
+            .then(rows => {
+                for (let i = 0; i < rows.length; i++) {
+                    console.log(rows[i]);
+                }
+
+                console.log("finished");
             })
-            .on("end", function () {
-                resolve(rows);
-            })
-            .on("error", function (error) {
-                reject(error);
+            .catch(error => {
+                console.log(error.message);
             });
-    });
-}
-logCsvOnConsole("./Data/MOCK_DATA.csv")
+    }
 
+    parseData() {
+        return new Promise((resolve, reject) => {
+            const rows = [];
+            fs.createReadStream(this.csvURL)
+                .pipe(parse({ delimiter: ",", from_line: 2 }))
+                .on("data", function (row) {
+                    rows.push(row);
+                })
+                .on("end", function () {
+                    resolve(rows);
+                })
+                .on("error", function (error) {
+                    reject(error);
+                });
+        });
+    }
+
+    async waitForData() {
+        try {
+            const parsedData = await this.parseData();
+            return parsedData;
+        } catch (error) {
+            console.error('Error:', error.message);
+            throw error; // Propagate the error if needed
+        }
+    }
+
+    getData(){
+        return this.waitForData()
+    }
+
+}
+
+module.exports = CsvReader;

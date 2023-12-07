@@ -73,6 +73,7 @@ node_modules
     the backend of the web app is going to be developed with node.js. the modules that have been installed are 
     node-csv
     node-SQLite
+    papaparse - added becuase handling the information asynchronously was
 admin_view.html
     the main html page, currently sparse for development purposes
 edit_employee.html
